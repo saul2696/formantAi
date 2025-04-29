@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formato de Mantenimiento AYTO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Formato de Mantenimiento AYTO</h1>
+    <form id="formulario">
+      <h2>1. Información del Equipo</h2>
+      <div class="mb-3">
+        <label class="form-label">Nombre del usuario:<input type="text" id="usuario" class="form-control"></label>
+        <label class="form-label">Área o departamento:<input type="text" id="area" class="form-control"></label>
+        <label class="form-label">Marca y modelo:<input type="text" id="marca" class="form-control"></label>
+        <label class="form-label">Número de serie:<input type="text" id="serie" class="form-control"></label>
+        <label class="form-label">No. Inventario:<input type="text" id="inventario" class="form-control"></label>
+        <label class="form-label">Fecha de mantenimiento:<input type="date" id="fecha" class="form-control"></label>
+        <label class="form-label">Tipo de Mantenimiento:
+          <select id="tipo" class="form-control">
+            <option value="Preventivo">Preventivo</option>
+            <option value="Correctivo">Correctivo</option>
+          </select>
+        </label>
+        <label class="form-label">Observaciones:<textarea id="observaciones1" class="form-control"></textarea></label>
+      </div>
+
+      <h2>2. Actualización de Sistema Operativo</h2>
+      <div class="mb-3">
+        <label class="form-label">Actualizado:<select id="os_actualizado" class="form-control"><option value="Si">Si</option><option value="No">No</option></select></label>
+        <label class="form-label">Observaciones:<textarea id="observaciones2" class="form-control"></textarea></label>
+        <label class="form-label">Nomenclatura asignada:<input type="text" id="nomenclatura" class="form-control"></label>
+      </div>
+
+      <h2>3. Actualización de Software</h2>
+      <div class="mb-3">
+        <label class="form-label">Observaciones:<textarea id="observaciones3" class="form-control"></textarea></label>
+      </div>
+
+      <h2>4. Protección y Seguridad</h2>
+      <div class="mb-3">
+        <label class="form-label">Observaciones:<textarea id="observaciones4" class="form-control"></textarea></label>
+      </div>
+
+      <h2>5. Mantenimiento General</h2>
+      <div class="mb-3">
+        <label class="form-label">Observaciones:<textarea id="observaciones5" class="form-control"></textarea></label>
+      </div>
+
+      <h2>6. Recomendaciones y Próximos Pasos</h2>
+      <div class="mb-3">
+        <label class="form-label">Observaciones:<textarea id="recomendaciones" class="form-control"></textarea></label>
+      </div>
+
+      <h2>Técnico Responsable</h2>
+      <div class="mb-3">
+        <label class="form-label">Nombre:<input type="text" id="tecnico" class="form-control"></label>
+      </div>
+
+      <button type="button" onclick="guardarMantenimiento()" class="btn btn-success">Guardar Mantenimiento</button>
+      <button type="button" onclick="mostrarHistorial()" class="btn btn-info">Ver Historial</button>
+      <button type="button" onclick="descargarExcel()" class="btn btn-warning">Descargar en Excel</button>
+    </form>
+
+    <div id="historial" class="mt-5"></div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
